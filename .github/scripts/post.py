@@ -82,6 +82,24 @@ def read_old():
         old_id.append(line.replace("\n", ""))
     return old_id
 
+def banner():
+    with open(".github/scripts/banner.txt", "r+") as f:
+        b = int(f.read())
+        if b == 0:
+            f.seek(0)
+            f.write('1')
+            return "1"
+        elif b == 1:
+            f.seek(0)
+            f.write('2')
+            return "2"
+        elif b == 2:
+            f.seek(0)
+            f.write('0')
+            return "3"
+        else:
+            print("ayo code died")
+
 
 # remove elements in 2nd list from 1st, helps to find out what device got an update
 def get_diff(new_id, old_id):
@@ -199,7 +217,8 @@ for i in get_diff(new, old):
     info = get_info(i)
     bot.send_sticker(CHAT_ID, STICKER_ID)
     #send_mes(cook_content(info))
-    send_photo(".github/assets/banner.jpg", cook_content(info))
+    ban_n = banner()
+    send_photo(f".github/assets/banner_{ban_n}.jpg", cook_content(info))
     if info["updater"]:
         update_json(info)
         commit_message = "Update new IDs and push OTA"
