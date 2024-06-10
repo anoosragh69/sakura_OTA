@@ -150,7 +150,7 @@ def get_info(id):
         "size": str(required['size']),
         "maintainer": maintainer,
         "version" : required['version'],
-        'name' : name,
+        "name" : name,
         "brand" : brand,
         "ota" : ota,
         "flash" : flash,
@@ -159,7 +159,8 @@ def get_info(id):
         "id" : required['id'],
         "romtype" : required['romtype'],
         "url" : required['url'],
-        "updater" : required['updater']
+        "updater" : required['updater'],
+        "support" : required['support']
     }
 
 
@@ -167,6 +168,12 @@ def bold(text1, text2):
     message = "<b>" + text1 + "</b>" + text2
     return message
 
+
+def support_chat(info):
+    if info:
+        return info + "\n\n"
+    else:
+        return "\n"
 
 # Prepare in the format needed
 def cook_content(information):
@@ -177,7 +184,8 @@ def cook_content(information):
         "👤 " + "by " + str(information["maintainer"]) + "\n\n" + \
         "ℹ️ " + "Version : " + str(information['version']) + "\n" +\
         "📆 " + "Date: " + str(datetime.date.today()).replace("-", "/") + "\n" + \
-        "⬇️ " + "<a href=\"https://projectsakura.me/download/#/\">Download</a>" + "" + "\n\n" + \
+        "⬇️ " + "<a href=\"https://projectsakura.me/download/#/\">Download</a>" + "" + "\n" + \
+        f"{support_chat(information['support'])}" + \
         bold(information['ota'], "") + "\n" + \
         bold(information['flash'], "") + "\n\n" + \
         "#" + str(information['device']) + " | #projectsakura" + "\n" + \

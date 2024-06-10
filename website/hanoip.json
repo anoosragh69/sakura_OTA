@@ -8,7 +8,8 @@
  "size": 1283116419,
  "url": "https://master.dl.sourceforge.net/project/projectsakura/hanoip/ProjectSakura-9.1-20240515-0959-GAPPS-hanoip-OFFICIAL.zip",
  "updater": true,
- "version": "9.1"
+ "version": "9.1",
+ "support" : "ProjectSakuraMoto"
 }
 ]
 }

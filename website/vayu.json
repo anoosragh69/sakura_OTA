@@ -8,7 +8,8 @@
  "size": 2072931711,
  "url": "https://master.dl.sourceforge.net/project/projectsakura/vayu/ProjectSakura-9.1-20240514-1545-GAPPS-vayu-OFFICIAL.zip",
  "updater": true,
- "version": "9.0"
+ "version": "9.1",
+ "support" : false
 }
 ]
 }
