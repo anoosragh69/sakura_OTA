@@ -171,7 +171,7 @@ def bold(text1, text2):
 
 def support_chat(info):
     if info:
-        return info + "\n\n"
+        return f"<a href=\"https://t.me/{info}/\">📲 Support Chat</a>" + "\n\n"
     else:
         return "\n"
 
